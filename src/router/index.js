@@ -141,7 +141,12 @@ export const constantRouterMap = [
     ]
   },
 
-  { path: '*', redirect: '/404', hidden: true },
+  { path: '*',
+    redirect: '/404',
+    hidden: true
+
+  },
+
   {
     path: '/hospSet',
     component: Layout,
@@ -160,9 +165,21 @@ export const constantRouterMap = [
         name: '医院设置添加',
         component: () => import('@/views/hospset/add'),
         meta: { title: '医院设置添加', icon: 'tree' }
+      },
+
+      {
+        path: 'edit/:id',
+        name: 'EduTeacherEdit',
+        component: () =>import('@/views/hospset/add'),
+        meta: {title: '编辑', noCache: true},
+        hidden: true
+
       }
+
     ]
   }
+
+
 ]
 
 export default new Router({
